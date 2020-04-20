@@ -12,9 +12,9 @@ namespace WebApplication.Controllers
 {
     public class DepartmentsController : Controller
     {
-        private readonly DepartmentContext _context;
+        private readonly SalesContext _context;
 
-        public DepartmentsController(DepartmentContext context)
+        public DepartmentsController(SalesContext context)
         {
             _context = context;
         }

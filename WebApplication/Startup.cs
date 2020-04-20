@@ -27,7 +27,7 @@ namespace WebApplication
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<DepartmentContext>(options =>
+            services.AddDbContext<SalesContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
         }
 

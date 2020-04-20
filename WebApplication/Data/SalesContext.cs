@@ -3,13 +3,15 @@ using WebApplication.Models;
 
 namespace WebApplication.Data
 {
-    public class DepartmentContext : DbContext
+    public class SalesContext : DbContext
     {
-        public DepartmentContext (DbContextOptions<DepartmentContext> options)
+        public SalesContext (DbContextOptions<SalesContext> options)
             : base(options)
         {
         }
 
         public DbSet<Department> Department { get; set; }
+        public DbSet<Seller> Seller { get; set; }
+        public DbSet<SalesRecord> SalesRecord { get; set; }
     }
 }
