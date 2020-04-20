@@ -3,7 +3,13 @@
     ViewData["Title"] = "Sellers";
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1 class="text-center">@ViewData["Title"]</h1>
+
+<p class="text-right">
+    <a asp-action="Create" class="mini positive ui button">
+        Create New
+    </a>
+</p>
 
 <table class="ui basic table">
     <thead>
