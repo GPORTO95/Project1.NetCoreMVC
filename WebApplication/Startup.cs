@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using WebApplication.Models;
 using WebApplication.Data;
+using WebApplication.Service;
 
 namespace WebApplication
 {
@@ -32,6 +33,7 @@ namespace WebApplication
                     options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -11,8 +11,8 @@ namespace WebApplication.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public DateTime BirthDaate { get; set; }
-        public double BasicSalary { get; set; }
+        public DateTime BirthDate { get; set; }
+        public double BaseSalary { get; set; }
         public Department Department { get; set; }
         public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
 
@@ -22,8 +22,8 @@ namespace WebApplication.Models
         {
             Name = name;
             Email = email;
-            BirthDaate = birthDaate;
-            BasicSalary = basicSalary;
+            BirthDate = birthDaate;
+            BaseSalary = basicSalary;
             Department = department;
         }
 
@@ -32,8 +32,8 @@ namespace WebApplication.Models
             Id = id;
             Name = name;
             Email = email;
-            BirthDaate = birthDaate;
-            BasicSalary = basicSalary;
+            BirthDate = birthDaate;
+            BaseSalary = basicSalary;
             Department = department;
         }
 
