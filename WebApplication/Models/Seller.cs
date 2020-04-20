@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace WebApplication.Models
 {
     public class Seller
     {
+        [Key]
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
@@ -15,6 +17,15 @@ namespace WebApplication.Models
         public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
 
         public Seller() { }
+
+        public Seller(string name, string email, DateTime birthDaate, double basicSalary, Department department)
+        {
+            Name = name;
+            Email = email;
+            BirthDaate = birthDaate;
+            BasicSalary = basicSalary;
+            Department = department;
+        }
 
         public Seller(int id, string name, string email, DateTime birthDaate, double basicSalary, Department department)
         {

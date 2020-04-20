@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WebApplication.Models;
 
-namespace WebApplication.Data
+namespace WebApplication.Models
 {
     public class SalesContext : DbContext
     {
