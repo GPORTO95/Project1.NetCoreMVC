@@ -66,3 +66,9 @@ body, button, a, input {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+/*----------Custom Style---------*/
+/*--Margin--*/
+.mt-1-7 {
+    margin-top: 1.71rem;
+}
