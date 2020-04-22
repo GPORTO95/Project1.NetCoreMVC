@@ -1,7 +1,88 @@
-﻿
+﻿@model IEnumerable<WebApplication.Models.SalesRecord>
+
 @{
-    ViewData["Title"] = "SimpleSearch";
+    ViewData["Title"] = "Simple Search";
 }
 
-<h1>@ViewData["Title"]</h1>
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body pt-2 pb-2">
+                <form class="form-group">
+                    <div class="row">
+                        <div class="col-4">
+                            <label for="minDate">Min Date</label>
+                            <input type="date" class="form-control" name="minDate" value=@ViewData["minDate"] />
+                        </div>
+                        <div class="col-4">
+                            <label for="maxDate">Max Date</label>
+                            <input type="date" class="form-control" name="maxDate" value=@ViewData["maxDate"] />
+                        </div>
+                        <div class="col-4 mt-4">
+                            <button type="submit" class="tiny ui green button">Filter</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="card mt-3">
+    <h5 class="card-header">Total sales = @Model.Sum(obj => obj.Amount).ToString("F2")</h5>
+    <div class="card-body">
+        <table class="ui celled table">
+            <thead>
+                <tr class="success">
+                    <th>
+                        @Html.DisplayNameFor(model => model.Id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Date)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Seller)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Seller.Department)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Amount)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Seller.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Seller.Department.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Amount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
 
