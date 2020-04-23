@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using WebApplication.Models;
 using WebApplication.Data;
 using WebApplication.Service;
+using Microsoft.Extensions.Logging;
 
 namespace WebApplication
 {

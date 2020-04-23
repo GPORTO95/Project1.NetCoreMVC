@@ -1,4 +1,4 @@
-﻿@model IEnumerable<IGrouping<Department, SalesRecord>>
+﻿@model IEnumerable<IGrouping<string, SalesRecord>>
 
 @{
     ViewData["Title"] = "Grouping Search";
@@ -35,7 +35,7 @@
 @foreach (var departmentGroup in Model)
 {
 <div class="card mt-3">
-    <h5 class="card-header">Department @departmentGroup.Key.Name, Total sales = @departmentGroup.Key.TotalSales(minDate, maxDate).ToString("F2")</h5>
+    <h5 class="card-header">Department @departmentGroup.Key, Total sales = @departmentGroup.ToList().Sum(x => x.Amount).ToString("F2")</h5>
     <div class="card-body">
         <table class="ui celled table">
             <thead>

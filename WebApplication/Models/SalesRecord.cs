@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using WebApplication.Models.Enums;
 
 namespace WebApplication.Models
@@ -16,6 +17,8 @@ namespace WebApplication.Models
         public double Amount { get; set; }
         public SaleStatus Status { get; set; }
         public Seller Seller { get; set; }
+        
+        [ForeignKey("Seller")]
         public int SellerId { get; set; }
 
         public SalesRecord() { }
